@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background: green;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        function animasi() {
+            $(".box").animate({
+                left: "+=300",
+                opacity: "0.5"
+            }, 1000, callback);
+        }
+
+        function callback() {
+            $(this).animate({
+                opacity: "1",
+                left: "-=300"
+            }, 1000, animasi);
+        }
+
+        $(document).ready(() => {
+            animasi();
+        })
+    </script>
+</body>
+</html>
