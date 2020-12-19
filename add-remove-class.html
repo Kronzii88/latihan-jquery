@@ -14,22 +14,28 @@
 <body>
     <button class="add">tambah class</button>
     <button class="remove">hilangkan class</button>
+    <button class="get-value">Dapatkan nilai attribut</button>
     <div class="box">ini isi dari class box</div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
-        $(document).ready(() =>
+        $(document).ready(() => {
+            
             $(".add").click(() => {
                 $(".box").addClass("hijau");
             })
-        )
 
-        $(document).ready(() =>
             $(".remove").click(() => {
                 $(".box").removeClass("hijau");
             })
-        )
+
+            $(".get-value").click(() => {
+                const value = $(".box").attr("class");
+                alert(value);
+            })                 
+            
+        })
     </script>
 </body>
 </html>
